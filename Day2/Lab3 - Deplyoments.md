@@ -4,12 +4,12 @@
 ---
 
 ### 1.1 Create a deployment called my-first-deployment of image nginx:alpine in the default namespace.
-```python
+```bash
 $ kubectl create deployment my-first-deployment --image==nginx:alpine --namespace=default
 deployment.apps/my-first-deployment created
 ```
 ### 1.2 Check to make sure the deployment is healthy.
-```python
+```bash
 $ k get deployments.apps 
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 my-first-deployment   1/1     1            1           68s
@@ -17,19 +17,19 @@ my-first-deployment   1/1     1            1           68s
 ```
 ----------------
 ### 2.1 Scale my-first-deployment up to run 3 replicas.
-```python
+```bash
 $ k scale deployment my-first-deployment --replicas=3
 deployment.apps/my-first-deployment scaled
 ```
 ### 2.2 Check to make sure all 3 replicas are ready.
-```python
+```bash
 $ k get deployments.apps 
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 my-first-deployment   3/3     3            3           4m40s
 ```
 ----------------
 ### 3-Scale my-first-deployment down to run 2 replicas.
-```python
+```bash
  $ k scale deployment my-first-deployment --replicas=2
 deployment.apps/my-first-deployment scaled
 
@@ -39,13 +39,13 @@ my-first-deployment   2/2     2            2           6m31s
 ```
 ---------------
 ### 4-Change the image my-first-deployment runs from nginx:alpine to httpd:alpine .
-```python
+```bash
 $ k set image deployment my-first-deployment nginx=httpd:alpine
 deployment.apps/my-first-deployment image updated
 ```
 --------------------------
 ### 5-Delete the deployment my-first-deployment
-```python
+```bash
 $ k delete deployments.apps my-first-deployment 
 deployment.apps "my-first-deployment" deleted
 ```
@@ -82,21 +82,21 @@ spec:
         name: busybox-container
 ```
 
-```python
+```bash
 $ k create -f q6-lab3.yaml 
 deployment.apps/frontend-deployment created
 ```
         
 -------------
 7-How many ReplicaSets exist on the system now?
-```python
+```bash
 $ k get replicasets.apps 
 NAME                             DESIRED   CURRENT   READY   AGE
 frontend-deployment-7fbf4f5cd9   4         4         0       53s
 ```
 ------------------------------
 8-How many PODs exist on the system now?
-```python
+```bash
 controlplane $ k get pods
 NAME                                   READY   STATUS             RESTARTS   AGE
 frontend-deployment-7fbf4f5cd9-lktz4   0/1     ImagePullBackOff   0          105s
@@ -106,18 +106,18 @@ frontend-deployment-7fbf4f5cd9-vbjkc   0/1     ImagePullBackOff   0          105
 ```
 -----------------
 9-Out of all the existing PODs, how many are ready?
-```python
+```bash
 0
 ```
 -------------------
 10-What is the image used to create the pods in the new deployment?
-```python
+```bash
 $ k describe deployments.apps frontend-deployment | grep -i "image"
     Image:      busybox888
 ```
 ---------------------
 11-Why do you think the deployment is not ready?
-```python
+```bash
 $ k get pods
 NAME                                   READY   STATUS             RESTARTS   AGE
 frontend-deployment-7fbf4f5cd9-lktz4   0/1     ImagePullBackOff   0          5m59s
@@ -127,13 +127,13 @@ frontend-deployment-7fbf4f5cd9-vbjkc   0/1     ImagePullBackOff   0          5m5
 ```
 ----------------------
 12-Create a new Deployment using the below yaml 
-```python
+```bash
 there is no yaml file to create from
 ```
 ----------------
 13-
 There is an issue with the file, so try to fix it.
 and correct the value of kind.
-```python
+```bash
 there is no file exist
 ```
