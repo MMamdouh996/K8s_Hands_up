@@ -38,7 +38,8 @@ Endpoints:         172.30.1.2:6443
 
 -----------
 ### 6-Create a Deployment using the below yaml
-
+Requiremnt
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -67,7 +68,7 @@ spec:
         ports:
         - containerPort: 8080
           protocol: TCP
-
+```
 
 ```bash
 $ k create -f q6-lab4.yaml 
