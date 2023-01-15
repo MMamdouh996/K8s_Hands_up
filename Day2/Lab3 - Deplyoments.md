@@ -30,7 +30,7 @@ my-first-deployment   3/3     3            3           4m40s
 ----------------
 ### 3-Scale my-first-deployment down to run 2 replicas.
 ```bash
- $ k scale deployment my-first-deployment --replicas=2
+$ k scale deployment my-first-deployment --replicas=2
 deployment.apps/my-first-deployment scaled
 
 $ k get deployments.apps 
@@ -96,6 +96,7 @@ frontend-deployment-7fbf4f5cd9   4         4         0       53s
 ```
 ------------------------------
 8-How many PODs exist on the system now?
+
 ```bash
 controlplane $ k get pods
 NAME                                   READY   STATUS             RESTARTS   AGE
