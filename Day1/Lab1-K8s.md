@@ -16,7 +16,7 @@ controlplane   Ready    control-plane   26d   v1.26.0
 node01         Ready    <none>          26d   v1.26.0
 ```
 ---
-### 3-Create a new pod with the nginx image, Image name: nginx
+### 3-Create a new pod with the nginx image, Image name: nginx 
 ```bash
 $ k run nginx --image=nginx
 pod/nginx created
