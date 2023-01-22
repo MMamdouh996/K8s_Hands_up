@@ -74,7 +74,7 @@ spec:
   capacity:
     storage: 100Mi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   hostPath:
     path: "/pv/log"
 ```
@@ -118,6 +118,10 @@ pv-log        100Mi      RWX            Retain           Available           loc
 - because access mode wasn't the same in the pv and pvc
 ------
 8-Update the Access Mode on the claim to bind it to the PV?
+```yaml
+  accessModes:
+    - ReadWriteOnce
+```
 ```bash
 vagrant@master:~/day4-kuber$ k get  pvc
 NAME          STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
